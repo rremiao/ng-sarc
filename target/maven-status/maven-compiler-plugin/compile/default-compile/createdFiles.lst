@@ -1,0 +1,15 @@
+com\rremiao\ngsarc\domain\entity\Building.class
+com\rremiao\ngsarc\domain\entity\Resource.class
+com\rremiao\ngsarc\domain\dto\BuildingDTO.class
+com\rremiao\ngsarc\NgSarcApplication.class
+com\rremiao\ngsarc\core\repository\BuildingRepository.class
+com\rremiao\ngsarc\controller\ResourceController.class
+com\rremiao\ngsarc\core\service\BuildingService.class
+com\rremiao\ngsarc\domain\adapter\BuildingAdapter.class
+com\rremiao\ngsarc\controller\BuildingController.class
+com\rremiao\ngsarc\domain\adapter\ResourceAdapter.class
+com\rremiao\config\SwaggerConfig.class
+com\rremiao\ngsarc\core\repository\ResourceRepository.class
+com\rremiao\ngsarc\domain\dto\ResourceDTO.class
+com\rremiao\ngsarc\controller\BuildingApi.class
+com\rremiao\ngsarc\core\service\ResourceService.class
