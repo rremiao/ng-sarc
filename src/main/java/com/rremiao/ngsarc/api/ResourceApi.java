@@ -12,9 +12,8 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.client.HttpClientErrorException.Forbidden;
-import org.springframework.web.client.HttpClientErrorException.NotFound;
 
+import com.rremiao.ngsarc.domain.dto.ExceptionDTO;
 import com.rremiao.ngsarc.domain.dto.ResourceDTO;
 
 import io.swagger.v3.oas.annotations.Operation;
@@ -47,7 +46,7 @@ public interface ResourceApi {
         @ApiResponse(responseCode = "200", description = "Returns a resource", 
             content = {@Content(mediaType = MediaType.APPLICATION_JSON_VALUE, schema = @Schema(implementation = ResourceDTO.class))}),
         @ApiResponse(responseCode = "404", description = "Not found", 
-            content = {@Content(mediaType = MediaType.APPLICATION_JSON_VALUE, schema = @Schema(implementation = NotFound.class))})   
+            content = {@Content(mediaType = MediaType.APPLICATION_JSON_VALUE, schema = @Schema(implementation = ExceptionDTO.class))})   
     })
     @GetMapping(value="/{resource_id}")
     ResourceDTO getResource(@RequestParam int resourceId);
@@ -63,9 +62,9 @@ public interface ResourceApi {
         @ApiResponse(responseCode = "200", description = "Returns a resource", 
             content = {@Content(mediaType = MediaType.APPLICATION_JSON_VALUE, schema = @Schema(implementation = ResourceDTO.class))}),
         @ApiResponse(responseCode = "404", description = "Not found", 
-            content = {@Content(mediaType = MediaType.APPLICATION_JSON_VALUE, schema = @Schema(implementation = NotFound.class))}),
+            content = {@Content(mediaType = MediaType.APPLICATION_JSON_VALUE, schema = @Schema(implementation = ExceptionDTO.class))}),
         @ApiResponse(responseCode = "403", description = "Forbidden", 
-            content = {@Content(mediaType = MediaType.APPLICATION_JSON_VALUE, schema = @Schema(implementation = Forbidden.class))})   
+            content = {@Content(mediaType = MediaType.APPLICATION_JSON_VALUE, schema = @Schema(implementation = ExceptionDTO.class))})   
     })
     @PostMapping(value="")
     ResourceDTO createResource(@RequestBody ResourceDTO resourceId);
@@ -76,14 +75,14 @@ public interface ResourceApi {
      * 
      */
 
-    @Operation(summary = "Patch a resource")
+    @Operation(summary = "Put a resource")
     @ApiResponses(value = {
         @ApiResponse(responseCode = "204", description = "Returns a resource", 
             content = {@Content(mediaType = MediaType.APPLICATION_JSON_VALUE, schema = @Schema(implementation = ResourceDTO.class))}),
         @ApiResponse(responseCode = "404", description = "Not found", 
-            content = {@Content(mediaType = MediaType.APPLICATION_JSON_VALUE, schema = @Schema(implementation = NotFound.class))}),
+            content = {@Content(mediaType = MediaType.APPLICATION_JSON_VALUE, schema = @Schema(implementation = ExceptionDTO.class))}),
         @ApiResponse(responseCode = "403", description = "Forbidden", 
-            content = {@Content(mediaType = MediaType.APPLICATION_JSON_VALUE, schema = @Schema(implementation = Forbidden.class))})   
+            content = {@Content(mediaType = MediaType.APPLICATION_JSON_VALUE, schema = @Schema(implementation = ExceptionDTO.class))})   
     })
     @PutMapping(value="/{building_id}")
     ResourceDTO putResource(@RequestParam int resourceId, @RequestBody ResourceDTO resourceDTO);
@@ -99,9 +98,9 @@ public interface ResourceApi {
         @ApiResponse(responseCode = "204", description = "Returns a resource", 
             content = {@Content(mediaType = MediaType.APPLICATION_JSON_VALUE, schema = @Schema(implementation = ResourceDTO.class))}),
         @ApiResponse(responseCode = "404", description = "Not found", 
-            content = {@Content(mediaType = MediaType.APPLICATION_JSON_VALUE, schema = @Schema(implementation = NotFound.class))}),
+            content = {@Content(mediaType = MediaType.APPLICATION_JSON_VALUE, schema = @Schema(implementation = ExceptionDTO.class))}),
         @ApiResponse(responseCode = "403", description = "Forbidden", 
-            content = {@Content(mediaType = MediaType.APPLICATION_JSON_VALUE, schema = @Schema(implementation = Forbidden.class))})   
+            content = {@Content(mediaType = MediaType.APPLICATION_JSON_VALUE, schema = @Schema(implementation = ExceptionDTO.class))})   
     })
     @PatchMapping(value="/{resource_id}")
     ResourceDTO patchResource(@RequestParam int resourceId, @RequestBody ResourceDTO resourceDTO);
@@ -112,14 +111,14 @@ public interface ResourceApi {
      * 
      */
 
-    @Operation(summary = "Patch a resource")
+    @Operation(summary = "Delete a resource")
     @ApiResponses(value = {
         @ApiResponse(responseCode = "204", description = "Returns a resource", 
             content = {@Content(mediaType = MediaType.APPLICATION_JSON_VALUE, schema = @Schema(implementation = ResourceDTO.class))}),
         @ApiResponse(responseCode = "404", description = "Not found", 
-            content = {@Content(mediaType = MediaType.APPLICATION_JSON_VALUE, schema = @Schema(implementation = NotFound.class))}),
+            content = {@Content(mediaType = MediaType.APPLICATION_JSON_VALUE, schema = @Schema(implementation = ExceptionDTO.class))}),
         @ApiResponse(responseCode = "403", description = "Forbidden", 
-            content = {@Content(mediaType = MediaType.APPLICATION_JSON_VALUE, schema = @Schema(implementation = Forbidden.class))})   
+            content = {@Content(mediaType = MediaType.APPLICATION_JSON_VALUE, schema = @Schema(implementation = ExceptionDTO.class))})   
     })
     @DeleteMapping(value="/{resource_id}")
     ResourceDTO deleteResource(@RequestParam int resourceId);

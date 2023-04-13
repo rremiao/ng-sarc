@@ -11,11 +11,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.client.HttpClientErrorException.Forbidden;
-import org.springframework.web.client.HttpClientErrorException.NotFound;
 
 import com.rremiao.ngsarc.domain.dto.BuildingDTO;
+import com.rremiao.ngsarc.domain.dto.ExceptionDTO;
+
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.ArraySchema;
 import io.swagger.v3.oas.annotations.media.Content;
@@ -27,7 +26,6 @@ import io.swagger.v3.oas.annotations.responses.ApiResponses;
 
 @RequestMapping("/building")
 @CrossOrigin
-@RestController
 public interface BuildingApi {
     
     @Operation(summary = "Returns all registered buildings")
@@ -48,7 +46,7 @@ public interface BuildingApi {
         @ApiResponse(responseCode = "200", description = "Returns a building", 
             content = {@Content(mediaType = MediaType.APPLICATION_JSON_VALUE, schema = @Schema(implementation = BuildingDTO.class))}),
         @ApiResponse(responseCode = "404", description = "Not found", 
-            content = {@Content(mediaType = MediaType.APPLICATION_JSON_VALUE, schema = @Schema(implementation = NotFound.class))})   
+            content = {@Content(mediaType = MediaType.APPLICATION_JSON_VALUE, schema = @Schema(implementation = ExceptionDTO.class))})   
     })
     @GetMapping(value="/{building_id}")
     BuildingDTO getBuilding(@RequestParam int buildingId);
@@ -64,9 +62,9 @@ public interface BuildingApi {
         @ApiResponse(responseCode = "200", description = "Returns a building", 
             content = {@Content(mediaType = MediaType.APPLICATION_JSON_VALUE, schema = @Schema(implementation = BuildingDTO.class))}),
         @ApiResponse(responseCode = "404", description = "Not found", 
-            content = {@Content(mediaType = MediaType.APPLICATION_JSON_VALUE, schema = @Schema(implementation = NotFound.class))}),
+            content = {@Content(mediaType = MediaType.APPLICATION_JSON_VALUE, schema = @Schema(implementation = ExceptionDTO.class))}),
         @ApiResponse(responseCode = "403", description = "Forbidden", 
-            content = {@Content(mediaType = MediaType.APPLICATION_JSON_VALUE, schema = @Schema(implementation = Forbidden.class))})   
+            content = {@Content(mediaType = MediaType.APPLICATION_JSON_VALUE, schema = @Schema(implementation = ExceptionDTO.class))})   
     })
     @PostMapping(value="")
     BuildingDTO createBuilding(@RequestBody BuildingDTO buildingId);
@@ -77,14 +75,14 @@ public interface BuildingApi {
      * 
      */
 
-    @Operation(summary = "Patch a building")
+    @Operation(summary = "Put a building")
     @ApiResponses(value = {
         @ApiResponse(responseCode = "204", description = "Returns a building", 
             content = {@Content(mediaType = MediaType.APPLICATION_JSON_VALUE, schema = @Schema(implementation = BuildingDTO.class))}),
         @ApiResponse(responseCode = "404", description = "Not found", 
-            content = {@Content(mediaType = MediaType.APPLICATION_JSON_VALUE, schema = @Schema(implementation = NotFound.class))}),
+            content = {@Content(mediaType = MediaType.APPLICATION_JSON_VALUE, schema = @Schema(implementation = ExceptionDTO.class))}),
         @ApiResponse(responseCode = "403", description = "Forbidden", 
-            content = {@Content(mediaType = MediaType.APPLICATION_JSON_VALUE, schema = @Schema(implementation = Forbidden.class))})   
+            content = {@Content(mediaType = MediaType.APPLICATION_JSON_VALUE, schema = @Schema(implementation = ExceptionDTO.class))})   
     })
     @PutMapping(value="/{building_id}")
     BuildingDTO putBuilding(@RequestParam int buildingId, @RequestBody BuildingDTO buildingDTO);
@@ -100,9 +98,9 @@ public interface BuildingApi {
         @ApiResponse(responseCode = "204", description = "Returns a building", 
             content = {@Content(mediaType = MediaType.APPLICATION_JSON_VALUE, schema = @Schema(implementation = BuildingDTO.class))}),
         @ApiResponse(responseCode = "404", description = "Not found", 
-            content = {@Content(mediaType = MediaType.APPLICATION_JSON_VALUE, schema = @Schema(implementation = NotFound.class))}),
+            content = {@Content(mediaType = MediaType.APPLICATION_JSON_VALUE, schema = @Schema(implementation = ExceptionDTO.class))}),
         @ApiResponse(responseCode = "403", description = "Forbidden", 
-            content = {@Content(mediaType = MediaType.APPLICATION_JSON_VALUE, schema = @Schema(implementation = Forbidden.class))})   
+            content = {@Content(mediaType = MediaType.APPLICATION_JSON_VALUE, schema = @Schema(implementation = ExceptionDTO.class))})   
     })
     @PatchMapping(value="/{building_id}")
     BuildingDTO patchBuilding(@RequestParam int buildingId, @RequestBody BuildingDTO buildingDTO);
@@ -113,14 +111,14 @@ public interface BuildingApi {
      * 
      */
 
-    @Operation(summary = "Patch a building")
+    @Operation(summary = "Delete a building")
     @ApiResponses(value = {
         @ApiResponse(responseCode = "204", description = "Returns a building", 
             content = {@Content(mediaType = MediaType.APPLICATION_JSON_VALUE, schema = @Schema(implementation = BuildingDTO.class))}),
         @ApiResponse(responseCode = "404", description = "Not found", 
-            content = {@Content(mediaType = MediaType.APPLICATION_JSON_VALUE, schema = @Schema(implementation = NotFound.class))}),
+            content = {@Content(mediaType = MediaType.APPLICATION_JSON_VALUE, schema = @Schema(implementation = ExceptionDTO.class))}),
         @ApiResponse(responseCode = "403", description = "Forbidden", 
-            content = {@Content(mediaType = MediaType.APPLICATION_JSON_VALUE, schema = @Schema(implementation = Forbidden.class))})   
+            content = {@Content(mediaType = MediaType.APPLICATION_JSON_VALUE, schema = @Schema(implementation = ExceptionDTO.class))})   
     })
     @DeleteMapping(value="/{building_id}")
     BuildingDTO deleteBuilding(@RequestParam int buildingId);
