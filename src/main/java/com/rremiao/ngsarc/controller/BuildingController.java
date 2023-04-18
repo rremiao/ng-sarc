@@ -17,35 +17,31 @@ public class BuildingController implements BuildingApi{
 
     @Override
     public List<BuildingDTO> getAllBuildings() {
-        return null;
+        return buildingService.getAllBuildings();
     }
 
     @Override
     public BuildingDTO getBuilding(int buildingId) {
-        throw new UnsupportedOperationException("Unimplemented method 'getBuilding'");
+        return buildingService.getBuilding(buildingId);
     }
 
     @Override
-    public BuildingDTO createBuilding(BuildingDTO buildingId) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'createBuilding'");
+    public BuildingDTO createBuilding(BuildingDTO buildingDTO) {
+        return buildingService.saveBuilding(buildingDTO);
     }
 
     @Override
     public BuildingDTO putBuilding(int buildingId, BuildingDTO buildingDTO) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'putBuilding'");
+        return buildingService.editBuilding(buildingId, buildingDTO);
     }
 
     @Override
     public BuildingDTO patchBuilding(int buildingId, BuildingDTO buildingDTO) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'patchBuilding'");
+        return buildingService.editBuilding(buildingId, buildingDTO);
     }
 
     @Override
-    public BuildingDTO deleteBuilding(int buildingId) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'deleteBuilding'");
+    public boolean deleteBuilding(int buildingId) {
+        return buildingService.deleteBuilding(buildingId);
     }
 }

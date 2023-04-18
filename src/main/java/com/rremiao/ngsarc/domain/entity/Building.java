@@ -32,5 +32,4 @@ public class Building {
     @OneToMany()
     @Column(name = "room")
     private List<Room> rooms;
-
 }

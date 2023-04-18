@@ -121,5 +121,5 @@ public interface BuildingApi {
             content = {@Content(mediaType = MediaType.APPLICATION_JSON_VALUE, schema = @Schema(implementation = ExceptionDTO.class))})   
     })
     @DeleteMapping(value="/{building_id}")
-    BuildingDTO deleteBuilding(@RequestParam int buildingId);
+    boolean deleteBuilding(@RequestParam int buildingId);
 }
