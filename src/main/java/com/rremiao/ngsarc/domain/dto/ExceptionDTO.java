@@ -5,8 +5,12 @@ import lombok.NoArgsConstructor;
 
 @Data
 @NoArgsConstructor
-public class ExceptionDTO {
+public class ExceptionDTO extends Exception{
     
     private int status;
     private String message;
+
+    public ExceptionDTO(String message) {
+        super(message);
+    }
 }

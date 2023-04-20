@@ -17,10 +17,7 @@ public class ResourceService {
     
     @Autowired
     ResourceRepository resourceRepository;
-
-    @Autowired
-    ResourceMapper resourceMapper;
-
+    
     public List<ResourceDTO> findAll() {
         return resourceRepository.findAll()
                                  .stream()

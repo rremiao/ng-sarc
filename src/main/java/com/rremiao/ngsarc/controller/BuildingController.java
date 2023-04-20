@@ -3,6 +3,8 @@ package com.rremiao.ngsarc.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.rremiao.ngsarc.api.BuildingApi;
@@ -21,27 +23,27 @@ public class BuildingController implements BuildingApi{
     }
 
     @Override
-    public BuildingDTO getBuilding(int buildingId) {
+    public BuildingDTO getBuilding(@PathVariable("buildingId") int buildingId) {
         return buildingService.getBuilding(buildingId);
     }
 
     @Override
-    public BuildingDTO createBuilding(BuildingDTO buildingDTO) {
+    public BuildingDTO createBuilding(@RequestBody BuildingDTO buildingDTO) {
         return buildingService.saveBuilding(buildingDTO);
     }
 
     @Override
-    public BuildingDTO putBuilding(int buildingId, BuildingDTO buildingDTO) {
+    public BuildingDTO putBuilding(@PathVariable("buildingId") int buildingId, @RequestBody BuildingDTO buildingDTO) {
         return buildingService.editBuilding(buildingId, buildingDTO);
     }
 
     @Override
-    public BuildingDTO patchBuilding(int buildingId, BuildingDTO buildingDTO) {
+    public BuildingDTO patchBuilding(@PathVariable("buildingId") int buildingId, @RequestBody BuildingDTO buildingDTO) {
         return buildingService.editBuilding(buildingId, buildingDTO);
     }
 
     @Override
-    public boolean deleteBuilding(int buildingId) {
+    public boolean deleteBuilding(@PathVariable("buildingId") int buildingId) {
         return buildingService.deleteBuilding(buildingId);
     }
 }
