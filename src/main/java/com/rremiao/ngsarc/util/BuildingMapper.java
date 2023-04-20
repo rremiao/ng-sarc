@@ -22,12 +22,6 @@ public class BuildingMapper {
 
         modelMapper.map(building, newBuilding);
 
-        // newBuilding.setId(building.getId());
-        // newBuilding.setName(building.getName());
-        // newBuilding.setNumber(building.getNumber());
-        // newBuilding.setAddress(createAddressDTO(building.getAddress()));
-        // newBuilding.setRooms(getRoomsAsDTO(building.getRooms()));
-
         return newBuilding;
     }
 
@@ -36,12 +30,6 @@ public class BuildingMapper {
         ModelMapper modelMapper = new ModelMapper();
 
         modelMapper.map(dto, newBuilding);
-
-        // newBuilding.setId(dto.getId());
-        // newBuilding.setName(dto.getName());
-        // newBuilding.setNumber(dto.getNumber());
-        // newBuilding.setAddress(createAddressEntity(dto.getAddress()));
-        // newBuilding.setRooms(getRoomsAsEntities(dto.getRooms()));
 
         return newBuilding;
     }
@@ -52,14 +40,6 @@ public class BuildingMapper {
 
         modelMapper.map(address, addressDTO);
 
-        // addressDTO.setId(address.getId());
-        // addressDTO.setStreet(address.getStreet());
-        // addressDTO.setNumber(address.getNumber());
-        // addressDTO.setComplement(address.getComplement());
-        // addressDTO.setDistrict(address.getDistrict());
-        // addressDTO.setUf(address.getUf());
-        // addressDTO.setCep(address.getCep());
-
         return addressDTO;
     }
 
@@ -68,14 +48,6 @@ public class BuildingMapper {
         ModelMapper modelMapper = new ModelMapper();
 
         modelMapper.map(addressDTO, address);
-
-        // address.setId(addressDTO.getId());
-        // address.setStreet(addressDTO.getStreet());
-        // address.setNumber(addressDTO.getNumber());
-        // address.setComplement(addressDTO.getComplement());
-        // address.setDistrict(addressDTO.getDistrict());
-        // address.setUf(addressDTO.getUf());
-        // address.setCep(addressDTO.getCep());
 
         return address;
     }
@@ -106,11 +78,6 @@ public class BuildingMapper {
 
         modelMapper.map(r, newRoomDTO);
 
-        // newRoomDTO.setId(r.getId());
-        // newRoomDTO.setNumber(r.getNumber());
-        // newRoomDTO.setCapacity(r.getCapacity());
-        // newRoomDTO.setFloor(r.getFloor());
-        
         return newRoomDTO;
     }
 
@@ -119,11 +86,6 @@ public class BuildingMapper {
         ModelMapper modelMapper = new ModelMapper();
 
         modelMapper.map(r, newRoom);
-
-        // newRoom.setId(r.getId());
-        // newRoom.setNumber(r.getNumber());
-        // newRoom.setCapacity(r.getCapacity());
-        // newRoom.setFloor(r.getFloor());
         
         return newRoom;
     }
