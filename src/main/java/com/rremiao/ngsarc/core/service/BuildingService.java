@@ -23,7 +23,6 @@ public class BuildingService {
                                 .stream()
                                 .map(BuildingMapper::createBuildingDTO)
                                 .collect(Collectors.toList());
-
     }
 
     public BuildingDTO getBuilding(int buildingId) {

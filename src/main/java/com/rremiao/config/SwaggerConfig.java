@@ -18,7 +18,7 @@ public class SwaggerConfig {
    public Docket api() {
 	return new Docket(DocumentationType.SWAGGER_2)
 		.select()
-		.apis(RequestHandlerSelectors.basePackage("com.rremiao.api"))
+		.apis(RequestHandlerSelectors.basePackage("com.rremiao.ngsarc.api"))
 		.paths(Predicates.negate(PathSelectors.regex("/basic-error-controller/.*")))//<6>, regex must be in double quotes.
 		.build();
 	} 

@@ -121,5 +121,5 @@ public interface ResourceApi {
             content = {@Content(mediaType = MediaType.APPLICATION_JSON_VALUE, schema = @Schema(implementation = ExceptionDTO.class))})   
     })
     @DeleteMapping(value="/{resource_id}")
-    ResourceDTO deleteResource(@RequestParam int resourceId);
+    boolean deleteResource(@RequestParam int resourceId);
 }

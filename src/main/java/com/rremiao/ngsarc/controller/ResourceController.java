@@ -17,37 +17,32 @@ public class ResourceController implements ResourceApi {
 
     @Override
     public List<ResourceDTO> getAllResources() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getAllResources'");
+        return resourceService.findAll();
     }
 
     @Override
     public ResourceDTO getResource(int resourceId) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getResource'");
+        return resourceService.getResource(resourceId);
     }
 
     @Override
-    public ResourceDTO createResource(ResourceDTO resourceId) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'createResource'");
+    public ResourceDTO createResource(ResourceDTO resourceDTO) {
+        return resourceService.saveResource(resourceDTO);
     }
 
     @Override
     public ResourceDTO putResource(int resourceId, ResourceDTO resourceDTO) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'putResource'");
+        return resourceService.editBuilding(resourceId, resourceDTO);
     }
 
     @Override
     public ResourceDTO patchResource(int resourceId, ResourceDTO resourceDTO) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'patchResource'");
+        return resourceService.editBuilding(resourceId, resourceDTO);
+
     }
 
     @Override
-    public ResourceDTO deleteResource(int resourceId) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'deleteResource'");
+    public boolean deleteResource(int resourceId) {
+        return resourceService.deleteBuilding(resourceId);
     }
 }
