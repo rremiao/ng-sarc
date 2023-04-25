@@ -52,7 +52,7 @@ public class ResourceMapper {
         return resourceType;
     }
 
-    public static List<CaracteristicsDTO> getRoomsAsDTO(List<Caracteristics> caracteristics) {
+    public static List<CaracteristicsDTO> getCaracteristicsAsDTO(List<Caracteristics> caracteristics) {
         List<CaracteristicsDTO> caracteristicsDTOs = new ArrayList<>();
 
         for(Caracteristics c : caracteristics) {
@@ -62,7 +62,7 @@ public class ResourceMapper {
         return caracteristicsDTOs;
     }
 
-    public static List<Caracteristics> getRoomsAsEntities(List<CaracteristicsDTO> caracteristicsDTOs) {
+    public static List<Caracteristics> getCaracteristicsAsEntities(List<CaracteristicsDTO> caracteristicsDTOs) {
         List<Caracteristics> caracteristics = new ArrayList<>();
 
         for(CaracteristicsDTO c : caracteristicsDTOs) {

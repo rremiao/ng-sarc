@@ -49,7 +49,6 @@ public class BuildingService {
         building.setAddress(BuildingMapper.createAddressEntity(address));
         building.setRooms(rooms.stream().map(BuildingMapper::createRoomEntity).collect(Collectors.toList()));
 
-        System.out.println("teste");
         return BuildingMapper.createBuildingDTO(buildingRepository.save(building));
     }
 

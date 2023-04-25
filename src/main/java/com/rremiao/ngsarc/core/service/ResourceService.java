@@ -8,7 +8,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.rremiao.ngsarc.core.repository.ResourceRepository;
+import com.rremiao.ngsarc.domain.dto.CaracteristicsDTO;
+import com.rremiao.ngsarc.domain.dto.ExceptionDTO;
 import com.rremiao.ngsarc.domain.dto.ResourceDTO;
+import com.rremiao.ngsarc.domain.dto.ResourceTypeDTO;
 import com.rremiao.ngsarc.domain.entity.Resource;
 import com.rremiao.ngsarc.util.ResourceMapper;
 
@@ -17,6 +20,12 @@ public class ResourceService {
     
     @Autowired
     ResourceRepository resourceRepository;
+
+    @Autowired
+    ResourceTypeService resourceTypeService;
+
+    @Autowired
+    CaracteristicsService caracteristicServce;
     
     public List<ResourceDTO> findAll() {
         return resourceRepository.findAll()
@@ -30,19 +39,35 @@ public class ResourceService {
     }
 
     public ResourceDTO saveResource(ResourceDTO dto) {
-        return ResourceMapper.createResourceDTO(
-                            resourceRepository.save(
-                                ResourceMapper.creatResourceEntity(dto)));
+        Resource newResource = new Resource();
+        ModelMapper modelMapper = new ModelMapper();
+
+        ResourceTypeDTO resourceTypeDTO = resourceTypeService.saveResourceType(dto.getResourceType());
+        List<CaracteristicsDTO> caracteristicsDTOs = caracteristicServce.saveCaracteristics(dto.getCaracteristics());
+
+        modelMapper.map(dto, newResource);
+
+        newResource.setResourceType(ResourceMapper.createResourceTypeEntity(resourceTypeDTO));
+        newResource.setCaracteristics(ResourceMapper.getCaracteristicsAsEntities(caracteristicsDTOs));
+
+        return ResourceMapper.createResourceDTO(resourceRepository.save(newResource));
     }
 
     public ResourceDTO editBuilding(int resourceId, ResourceDTO dto) {
-        Resource newResource = ResourceMapper.creatResourceEntity(dto);
-        Resource oldResource = resourceRepository.findById(resourceId);
-        ModelMapper modelMapper = new ModelMapper();
+        Resource resource = resourceRepository.findById(resourceId);
 
-        modelMapper.map(newResource, oldResource);
-
-        return ResourceMapper.createResourceDTO(resourceRepository.save(oldResource));        
+        try {
+            if(resource != null) {
+                return saveResource(dto);
+            }
+            else {
+                throw new ExceptionDTO("Building not found");
+            }
+        }
+        catch(ExceptionDTO e) {
+            e.printStackTrace();
+            return null;
+        }     
     }
 
     public boolean deleteBuilding(int resourceId) {
