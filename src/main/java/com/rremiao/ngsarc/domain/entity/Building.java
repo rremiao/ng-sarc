@@ -29,7 +29,7 @@ public class Building {
     @JoinColumn(name = "address", referencedColumnName = "id")
     private Address address;
 
-    @OneToMany()
-    @Column(name = "room")
+    @OneToMany
+    @JoinColumn(name = "room", referencedColumnName = "id")
     private List<Room> rooms;
 }

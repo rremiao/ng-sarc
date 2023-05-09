@@ -7,11 +7,11 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.rremiao.ngsarc.core.dto.CaracteristicsDTO;
+import com.rremiao.ngsarc.core.dto.ExceptionDTO;
+import com.rremiao.ngsarc.core.dto.ResourceDTO;
+import com.rremiao.ngsarc.core.dto.ResourceTypeDTO;
 import com.rremiao.ngsarc.core.repository.ResourceRepository;
-import com.rremiao.ngsarc.domain.dto.CaracteristicsDTO;
-import com.rremiao.ngsarc.domain.dto.ExceptionDTO;
-import com.rremiao.ngsarc.domain.dto.ResourceDTO;
-import com.rremiao.ngsarc.domain.dto.ResourceTypeDTO;
 import com.rremiao.ngsarc.domain.entity.Resource;
 import com.rremiao.ngsarc.util.ResourceMapper;
 

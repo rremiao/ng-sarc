@@ -3,8 +3,8 @@ package com.rremiao.ngsarc.core.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.rremiao.ngsarc.core.dto.ResourceTypeDTO;
 import com.rremiao.ngsarc.core.repository.ResourceTypeRepository;
-import com.rremiao.ngsarc.domain.dto.ResourceTypeDTO;
 import com.rremiao.ngsarc.domain.entity.ResourceType;
 import com.rremiao.ngsarc.util.ResourceMapper;
 

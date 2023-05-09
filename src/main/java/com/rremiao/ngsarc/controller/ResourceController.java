@@ -6,8 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.rremiao.ngsarc.api.ResourceApi;
+import com.rremiao.ngsarc.core.dto.ResourceDTO;
 import com.rremiao.ngsarc.core.service.ResourceService;
-import com.rremiao.ngsarc.domain.dto.ResourceDTO;
 
 @RestController
 public class ResourceController implements ResourceApi {

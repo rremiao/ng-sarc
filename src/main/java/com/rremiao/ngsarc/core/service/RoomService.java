@@ -7,8 +7,8 @@ import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.rremiao.ngsarc.core.dto.RoomDTO;
 import com.rremiao.ngsarc.core.repository.RoomRepository;
-import com.rremiao.ngsarc.domain.dto.RoomDTO;
 import com.rremiao.ngsarc.domain.entity.Room;
 import com.rremiao.ngsarc.util.BuildingMapper;
 

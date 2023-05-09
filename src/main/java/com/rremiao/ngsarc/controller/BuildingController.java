@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.rremiao.ngsarc.api.BuildingApi;
+import com.rremiao.ngsarc.core.dto.BuildingDTO;
 import com.rremiao.ngsarc.core.service.BuildingService;
-import com.rremiao.ngsarc.domain.dto.BuildingDTO;
 
 @RestController
 public class BuildingController implements BuildingApi{

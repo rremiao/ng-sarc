@@ -6,9 +6,9 @@ import java.util.List;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Component;
 
-import com.rremiao.ngsarc.domain.dto.CaracteristicsDTO;
-import com.rremiao.ngsarc.domain.dto.ResourceDTO;
-import com.rremiao.ngsarc.domain.dto.ResourceTypeDTO;
+import com.rremiao.ngsarc.core.dto.CaracteristicsDTO;
+import com.rremiao.ngsarc.core.dto.ResourceDTO;
+import com.rremiao.ngsarc.core.dto.ResourceTypeDTO;
 import com.rremiao.ngsarc.domain.entity.Caracteristics;
 import com.rremiao.ngsarc.domain.entity.Resource;
 import com.rremiao.ngsarc.domain.entity.ResourceType;

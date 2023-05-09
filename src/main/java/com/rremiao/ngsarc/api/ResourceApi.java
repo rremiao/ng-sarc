@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.rremiao.ngsarc.domain.dto.ExceptionDTO;
-import com.rremiao.ngsarc.domain.dto.ResourceDTO;
+import com.rremiao.ngsarc.core.dto.ExceptionDTO;
+import com.rremiao.ngsarc.core.dto.ResourceDTO;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.ArraySchema;

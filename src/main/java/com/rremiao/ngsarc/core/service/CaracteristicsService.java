@@ -7,8 +7,8 @@ import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.rremiao.ngsarc.core.dto.CaracteristicsDTO;
 import com.rremiao.ngsarc.core.repository.CaracteristicsRepository;
-import com.rremiao.ngsarc.domain.dto.CaracteristicsDTO;
 import com.rremiao.ngsarc.domain.entity.Caracteristics;
 import com.rremiao.ngsarc.util.ResourceMapper;
 

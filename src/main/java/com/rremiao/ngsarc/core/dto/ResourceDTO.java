@@ -1,4 +1,4 @@
-package com.rremiao.ngsarc.domain.dto;
+package com.rremiao.ngsarc.core.dto;
 
 import java.util.*;
 

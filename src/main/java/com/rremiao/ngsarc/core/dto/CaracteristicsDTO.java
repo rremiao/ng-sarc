@@ -1,9 +1,10 @@
-package com.rremiao.ngsarc.domain.dto;
+package com.rremiao.ngsarc.core.dto;
 
 import lombok.Data;
 
 @Data
-public class ResourceTypeDTO {
+public class CaracteristicsDTO {
+    
     private int id;
     private String name;
 }

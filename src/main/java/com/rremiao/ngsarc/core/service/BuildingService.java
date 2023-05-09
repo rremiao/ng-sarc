@@ -7,11 +7,11 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.rremiao.ngsarc.core.dto.AddressDTO;
+import com.rremiao.ngsarc.core.dto.BuildingDTO;
+import com.rremiao.ngsarc.core.dto.ExceptionDTO;
+import com.rremiao.ngsarc.core.dto.RoomDTO;
 import com.rremiao.ngsarc.core.repository.BuildingRepository;
-import com.rremiao.ngsarc.domain.dto.AddressDTO;
-import com.rremiao.ngsarc.domain.dto.BuildingDTO;
-import com.rremiao.ngsarc.domain.dto.ExceptionDTO;
-import com.rremiao.ngsarc.domain.dto.RoomDTO;
 import com.rremiao.ngsarc.domain.entity.Building;
 import com.rremiao.ngsarc.util.BuildingMapper;
 

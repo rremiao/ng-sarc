@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.rremiao.ngsarc.domain.dto.BuildingDTO;
-import com.rremiao.ngsarc.domain.dto.ExceptionDTO;
+import com.rremiao.ngsarc.core.dto.BuildingDTO;
+import com.rremiao.ngsarc.core.dto.ExceptionDTO;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.ArraySchema;

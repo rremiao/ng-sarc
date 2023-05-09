@@ -30,7 +30,7 @@ public class Resource {
     private ResourceType resourceType;
 
     @OneToMany()
-    @Column(name = "caracteristics")
+    @JoinColumn(name = "caracteristics", referencedColumnName = "id")
     private List<Caracteristics> caracteristics;
 
 }

@@ -6,9 +6,9 @@ import java.util.List;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Component;
 
-import com.rremiao.ngsarc.domain.dto.AddressDTO;
-import com.rremiao.ngsarc.domain.dto.BuildingDTO;
-import com.rremiao.ngsarc.domain.dto.RoomDTO;
+import com.rremiao.ngsarc.core.dto.AddressDTO;
+import com.rremiao.ngsarc.core.dto.BuildingDTO;
+import com.rremiao.ngsarc.core.dto.RoomDTO;
 import com.rremiao.ngsarc.domain.entity.Address;
 import com.rremiao.ngsarc.domain.entity.Building;
 import com.rremiao.ngsarc.domain.entity.Room;
