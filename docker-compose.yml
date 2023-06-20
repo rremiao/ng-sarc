@@ -3,7 +3,7 @@ version: '3.7'
 services:
 
   ngsarc:
-    container_name: ngsarc
+    container_name: ng-sarc
     build:
       context: .
       dockerfile: dockerfile
