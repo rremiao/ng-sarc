@@ -52,5 +52,5 @@ jobs:
             git fetch --all &&
             git reset --hard origin/main &&
             git pull origin main &&
-            docker build . --file dockerfile --tag ng-sarc:$(date +%s) 
+            docker-compose -f docker-compose.prod.yml up -d --build 
           '
