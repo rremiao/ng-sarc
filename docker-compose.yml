@@ -1,0 +1,11 @@
+version: '3.7'
+
+services:
+
+  ngsarc:
+    container_name: ngsarc
+    build:
+      context: .
+      dockerfile: dockerfile
+    ports:
+      - 8080:8080
